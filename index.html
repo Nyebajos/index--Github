@@ -265,12 +265,15 @@ body {
     totalElement.textContent = `Total: ${totalActuel} $`;
 }
 
-const boutonVAlider =
-    document.getElementByid('valider-btn');
-    const message = 
-       document.getElementByid('message-validation');
-    boutonValider. addEventListener('click'. function(){
-        message .style .display = ' block ';});
+function validerCommande() {
+    const totalElement = document.getElementById("total");
+    const total = parseFloat(totalElement.textContent);
+
+    if (total === 0) {
+        alert("Votre commande est vide !");
+    } else {
+        window.location.href = "confirmation.html";
+    }
 }
 </script>
 
